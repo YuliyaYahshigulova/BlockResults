@@ -11,86 +11,34 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-//string[] Array1 = {"Hello", "2", "world", ":-)"};
+
 // string[] array = {"1234", "1567", "-2", "computer science"};
+// string[] array = {"Russia", "Denmark", "Kazan"};
+string[] array = { "Hello", "2", "world", ":-)" };
 
-// int size = 3;
-
-// string[] ShortArray(string[] array)
-// {
-//     int length = array.Length;
-//     string[] shortarray = new string[length];
-//     int count = 0;
-//     for (int i = 0; i < length; i++)
-//     {
-//         if (array[i].Length <= size)
-//         {
-//             shortarray[count] = array[i];
-//             count++;
-//         }
-//     }
-//     Array.Resize(ref shortarray, count);
-//     return shortarray;
-// }
-// void PrintArray (string[]array)
-// {
-//     int length = array.Length;
-//     for (int i=0; i<length; i++)
-//     {
-//         Console.Write($"{array[i]} ");
-//     }
-// }
-
-// string[] shortarray = ShortArray(array);
-
-////////
-//
-// using static System.Console;
-
-// //Метод, который считывает строку с консли.
-
-// string ReadString()
-// {
-//     WriteLine("Введите слова через пробел");
-//     return ReadLine()!;
-// }
-
-// // Метод, который преобразует строку в массив строк.
-
-// string[] StringToArray(string s)
-// {
-//     string[] stringArray = s.Split(" ");
-//     return stringArray;
-// }
-
-//Метод, который создает массив только из элементов меньше трех символов. 
-
-string[] array = {"Hello", "2", "world", ":-)"};
-
-string[] ShortArray(string[] array)
+string[] NewShortArray(string[] array)
 {
     int count = 0;
+    int size = 3;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length <= size)
         {
             count++;
         }
     }
-    string[] targetArray = new string[count];
+    string[] shortArray = new string[count];
     count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length <= size)
         {
-            targetArray[count] = array[i];
+            shortArray[count] = array[i];
             count++;
         }
     }
-    return targetArray;
+    return shortArray;
 }
-
-//Метод печати массива.
 
 void PrintArray(string[] array)
 {
@@ -101,9 +49,5 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
-//Решение.
-
-// string str = ReadString();
-// string[] array = StringToArray(str);
-string[] targetArray = ShortArray(array);
-PrintArray(targetArray);
+string[] shortArray = NewShortArray(array);
+PrintArray(shortArray);
