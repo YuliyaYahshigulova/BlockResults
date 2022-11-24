@@ -22,10 +22,7 @@ string[] NewShortArray(string[] array)
     int size = 3;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= size)
-        {
-            count++;
-        }
+        if (array[i].Length <= size) count++;
     }
     string[] shortArray = new string[count];
     count = 0;
